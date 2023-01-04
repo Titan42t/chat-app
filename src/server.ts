@@ -2,13 +2,15 @@ import expressWs, {Application} from "express-ws"
 import express, {Request, Response, NextFunction} from "express"
 import cookieParser from 'cookie-parser'
 import path from 'path'
-import {getLogin} from "./routes/getLogin"
+import {getLogin} from "./routes/login/getLogin"
+import {postLogin} from "./routes/login/postLogin"
+import {getRegister} from "./routes/register/getRegister"
+import {postRegister} from "./routes/register/postRegister"
 import {getRoot} from "./routes/getRoot"
+import {getChat} from "./routes/chat/getChat"
 import {getWs} from "./routes/getWs"
-import {postLogin} from "./routes/postLogin"
-import { authenticationMiddleware } from "./middlewares/authenticationMiddleware"
-import {getRegister} from "./routes/getRegister"
-import { postRegister } from "./routes/postRegister"
+import {authenticationMiddleware} from "./middlewares/authenticationMiddleware"
+import { getLogout } from "./routes/login/getLogout"
 
 const SECRET_KEY = 'MySecretKeyIsAwesome'
 
@@ -31,6 +33,8 @@ function main() {
 
   app.use(authenticationMiddleware)
   getRoot(app)
+  getLogout(app)
+  getChat(app)
   getWs(app, sockets)
 
   app.use((error: Error, req: Request, res: Response, next: NextFunction) => {

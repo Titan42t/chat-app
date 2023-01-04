@@ -1,6 +1,6 @@
 import {Application} from "express-ws"
 import bodyParser from "body-parser"
-import {findUserByEmail} from "../repositories/userRepository"
+import {findUserByEmail} from "../../repositories/userRepository"
 
 export function postLogin(app: Application) {
   app.post('/login', bodyParser.urlencoded(), async (req, res) => {
@@ -16,7 +16,7 @@ export function postLogin(app: Application) {
         httpOnly: true,
         sameSite: true
       })
-      res.redirect('/')
+      res.redirect('/chat')
     } catch (e) {
       console.error(e)
       res.status(500).send('Internal Server Error')

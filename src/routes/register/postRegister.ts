@@ -1,6 +1,6 @@
 import {Application} from "express-ws"
 import bodyParser from "body-parser"
-import {createUser, findUserByEmail} from "../repositories/userRepository"
+import {createUser} from "../../repositories/userRepository"
 
 export function postRegister(app: Application) {
   app.post('/register', bodyParser.urlencoded(), async (req, res) => {
