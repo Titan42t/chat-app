@@ -7,10 +7,13 @@ import {postLogin} from "./routes/login/postLogin"
 import {getRegister} from "./routes/register/getRegister"
 import {postRegister} from "./routes/register/postRegister"
 import {getRoot} from "./routes/getRoot"
+import {getProfile} from "./routes/profile/getProfile"
 import {getChat} from "./routes/chat/getChat"
 import {getWs} from "./routes/getWs"
 import {authenticationMiddleware} from "./middlewares/authenticationMiddleware"
-import { getLogout } from "./routes/login/getLogout"
+import {getLogout} from "./routes/login/getLogout"
+import { postProfile } from "./routes/profile/postProfile"
+import { deleteProfile } from "./routes/profile/deleteProfile"
 
 const SECRET_KEY = 'MySecretKeyIsAwesome'
 
@@ -19,6 +22,7 @@ function main() {
   expressWs(app)
   const sockets = new Map()
 
+  app.set('view engine', 'ejs')
   app.use((req, res, next) => {
     console.log(new Date().toISOString(), req.method, req.path)
     next()
@@ -34,6 +38,9 @@ function main() {
   app.use(authenticationMiddleware)
   getRoot(app)
   getLogout(app)
+  getProfile(app)
+  postProfile(app)
+  deleteProfile(app)
   getChat(app)
   getWs(app, sockets)
 

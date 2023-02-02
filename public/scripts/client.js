@@ -49,8 +49,7 @@ connect()
 document.querySelector('form')
   .addEventListener('submit', (e) => {
     e.preventDefault()
-    const input = document
-      .querySelector('#chat-input')
+    const input = document.querySelector('#chat-input')
     ws.send(input.value)
     input.value = ''
   })

@@ -6,28 +6,21 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Chat app</title>
+  <link href="assets/css/chat.css" rel="stylesheet">
 </head>
 <body>
-<div style="display: flex; align-items: center;">
-  <h1 style="margin-right: 15px;">My chat app</h1>
-  <i id="chat-status"></i>
-</div>
-<div id="message-list"></div>
-<form>
-  <input type="text" id="chat-input" placeholder="Mon message..."/>
-  <button type="submit">Envoyer</button>
-</form>
-<style>
-  #chat-status {
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-  }
-
-  #message-list > div {
-    margin-bottom: 5px;
-  }
-</style>
-<script src="/client.js"></script>
+  <div class="page">
+    <div class="title">
+      <h1>My chat app</h1>
+      <i id="chat-status"></i>
+    </div>
+    <div id="message-list"></div>
+    <form class="messager">
+      <textarea id="chat-input" type="text" placeholder="Mon message..." contenteditable="true"></textarea>
+      <button class="sendBtn" type="submit">Envoyer</button>
+    </form>
+  </div>
+  
+  <script src="scripts/client.js"></script>
 </body>
 </html>

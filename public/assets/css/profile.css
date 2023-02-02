@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    margin: 0 0 30px;
+}
+
+p {
+    margin: 0;
+}
+
+input {
+    display: block;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.page {
+    padding: 20px;
+}
+
+.btn {
+    background: none;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+#btn {
+    color: rgb(9, 180, 0);
+    border: solid 2px rgb(9, 180, 0);
+    margin: 15px 0;
+}
+
+#btn:hover {
+    background-color: rgb(9, 180, 0);
+    color: white;
+}
+
+#modalBtn {
+    display: inline-block;
+    width: fit-content;
+    background: none;
+    text-decoration: none;
+    color: rgb(220, 0, 0);
+    font-size: 14px;
+    padding: 10px 15px;
+    border: solid 2px rgb(220, 0, 0);
+    margin: 15px 0 0 20px;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+#modalBtn:hover {
+    background-color: rgb(220, 0, 0);
+    color: white;
+}
+
+.mention {
+    color: rgb(152, 152, 152);
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+
+.notif {
+    width: 50%;
+    display: block;
+    background-color: rgb(146, 255, 141);
+    text-align: center;
+    color: #007b1f;
+    padding: 15px 10px;
+    margin: 30px auto 50px;
+}
+
+.logoutBtn {
+    color: rgb(155, 155, 155);
+    border: solid 2px rgb(155, 155, 155);
+    margin: 50px 0;
+}
+
+.logoutBtn:hover {
+    color: white;
+    background: rgb(155, 155, 155);
+}
+
+#modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.744);
+}
+
+.modal {
+    background-color: white;
+    padding: 30px;
+    border: solid 1px rgb(69, 69, 69);
+    border-radius: 3px;
+}
+
+.modal p {
+    margin-bottom: 30px;
+}
+
+.modal .buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal .buttons .cancelBtn {
+    color: rgb(155, 155, 155);
+    border: solid 2px rgb(155, 155, 155);
+}
+
+.modal .buttons .cancelBtn:hover {
+    background: rgb(155, 155, 155);
+    color: white;
+}
+
+.modal .buttons .deleteBtn {
+    background: rgb(220, 0, 0);
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 15px;
+    border: solid 2px rgb(220, 0, 0);
+    margin: 0;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.modal .buttons .deleteBtn:hover {
+    background: white;
+    color: rgb(220, 0, 0);
+}

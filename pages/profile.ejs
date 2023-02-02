@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon profil</title>
+    <link rel="stylesheet" href="assets/css/profile.css">
+</head>
+<body>
+    <div class="page">
+        <h1>Mon profil</h1>
+        <form action="/profile" method="post">
+            <label>Nom :</label>
+            <input id="name" type="text" name="name" value="<%= user.name %>">
+            <label>Mail :</label>
+            <input id="email" type="email" name="email" value="<%= user.email %>">
+            <div>
+                <button type="submit" id="btn" class="btn">Enregistrer</button>
+                <div id="modalBtn">Supprimer mon compte</div>
+            </div>
+        </form>
+        <p class="mention">Vous pouvez directement changer votre nom ou votre adresse
+        mail dans les champs correspondants, puis appuyez sur "Enregistrer"</p>
+        <% if(typeof message != 'undefined') { %>
+            <p class="notif"><%= message %></p>
+        <% } %>
+        <a class="logoutBtn btn" href="/logout">Se déconnecter</a>
+    </div>
+
+    <div id="modal">
+        <div class="modal">
+            <p>Êtes-vous sûr de vouloir supprimer votre compte ?</p>
+            <div class="buttons">
+                <button class="cancelBtn btn" onclick="cancel()">Annuler</button>
+                <a class="deleteBtn" href="/deleteProfile">Supprimer mon compte</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('modal')
+        const modalBtn = document.getElementById('modalBtn')
+
+        modalBtn.addEventListener('click', () => {
+            modal.style.display = "flex"
+        })
+
+        function cancel() {
+            modal.style.display = "none"
+        }
+    </script>
+</body>
+</html>
