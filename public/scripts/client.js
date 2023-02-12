@@ -1,7 +1,7 @@
 const messageList = document.getElementById('message-list')
 const chatStatus = document.getElementById('chat-status')
 
-function addMessage(name, message) {
+function addMessage(name, message) {z
   const messageElement = document.createElement('div')
   const nameElement = document.createElement('b')
   nameElement.innerText = name + ' : '
@@ -15,7 +15,7 @@ function addMessage(name, message) {
 let ws
 
 function connect() {
-  ws = new WebSocket('ws://localhost:3000/ws')
+  ws = new WebSocket('ws://localhost:3000/chat/ws')
   ws.onopen = () => {
     console.log('Connected')
     chatStatus.style.backgroundColor = 'green'

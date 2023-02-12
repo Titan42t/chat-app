@@ -2,18 +2,19 @@ import expressWs, {Application} from "express-ws"
 import express, {Request, Response, NextFunction} from "express"
 import cookieParser from 'cookie-parser'
 import path from 'path'
+import {authenticationMiddleware} from "./middlewares/authenticationMiddleware"
 import {getLogin} from "./routes/login/getLogin"
 import {postLogin} from "./routes/login/postLogin"
+import {getLogout} from "./routes/login/getLogout"
 import {getRegister} from "./routes/register/getRegister"
 import {postRegister} from "./routes/register/postRegister"
-import {getRoot} from "./routes/getRoot"
+import {getWs} from "./routes/root/getWs"
+import {getRoot} from "./routes/root/getRoot"
 import {getProfile} from "./routes/profile/getProfile"
+import {postProfile} from "./routes/profile/postProfile"
+import {deleteProfile} from "./routes/profile/deleteProfile"
 import {getChat} from "./routes/chat/getChat"
-import {getWs} from "./routes/getWs"
-import {authenticationMiddleware} from "./middlewares/authenticationMiddleware"
-import {getLogout} from "./routes/login/getLogout"
-import { postProfile } from "./routes/profile/postProfile"
-import { deleteProfile } from "./routes/profile/deleteProfile"
+import {getWsChat} from "./routes/chat/getWsChat"
 
 const SECRET_KEY = 'MySecretKeyIsAwesome'
 
@@ -43,6 +44,7 @@ function main() {
   deleteProfile(app)
   getChat(app)
   getWs(app, sockets)
+  getWsChat(app, sockets)
 
   app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
     console.error(error)

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body>
+    <div class="page">
+        <form class="newPost">
+            <input id="contentInput" name="content" placeholder="Votre post">
+            <button id="sendBtn">+</button>
+        </form>
+        <div id="posts">
+            <% posts.forEach(function(post) { %>
+                <div class="post">
+                    <p><%= post.author.name %> : <%= post.content %></p>
+                    <p><%= post.createdAt %></p>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+
+    <script src="scripts/feed.js"></script>
+</body>
+</html>

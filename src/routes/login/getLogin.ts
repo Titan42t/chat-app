@@ -4,7 +4,7 @@ import path from "path"
 export function getLogin(app: Application) {
   app.get('/login', (req, res) => {
     if (req.signedCookies.ssid) {
-      res.redirect('/chat')
+      res.redirect('/')
       return
     }
 
