@@ -5,9 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon profil</title>
+    <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/profile.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <a href="/"><li>Feed</li></a>
+                <a href="/chat"><li>Chat</li></a>
+                <a href="/profile"><li>Profile</li></a>
+            </ul>
+        </nav>
+    </header>
     <div class="page">
         <h1>Mon profil</h1>
         <form action="/profile" method="post">
@@ -26,6 +36,19 @@
             <p class="notif"><%= message %></p>
         <% } %>
         <a class="logoutBtn btn" href="/logout">Se déconnecter</a>
+        <div>
+            <h2>Mes posts</h2>
+            <div class="posts">
+                <% if(typeof posts != 'null') { %>
+                    <% posts.forEach(function(post) { %>
+                        <div class="post">
+                            <p><%= post.content %></p>
+                            <p>Modifié le <%= post.updatedAt %></p>
+                        </div>
+                    <% }); %>
+                <% } %>
+            </div>
+        </div>
     </div>
 
     <div id="modal">

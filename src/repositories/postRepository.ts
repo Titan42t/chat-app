@@ -11,7 +11,7 @@ export function findPostByEmail(userId: string) {
 export function findEveryPosts(startDate: Date) {
     return prisma.post.findMany({
         where: {
-            createdAt: {
+            updatedAt: {
                 gte: startDate
             },
         },
@@ -20,6 +20,17 @@ export function findEveryPosts(startDate: Date) {
         },
         orderBy: {
             createdAt: "desc"
+        }
+    })
+}
+
+export function findEveryPostsByUser(userId: string) {
+    return prisma.post.findMany({
+        where: {
+            userId: userId
+        },
+        include: {
+            author: true
         }
     })
 }

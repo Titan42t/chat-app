@@ -5,12 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
+    <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <a href="/"><li>Feed</li></a>
+                <a href="/chat"><li>Chat</li></a>
+                <a href="/profile"><li>Profile</li></a>
+            </ul>
+        </nav>
+    </header>
     <div class="page">
         <form class="newPost">
-            <input id="contentInput" name="content" placeholder="Votre post">
+            <textarea id="contentInput" name="content" placeholder="Votre post"></textarea>
             <button id="sendBtn">+</button>
         </form>
         <div id="posts">

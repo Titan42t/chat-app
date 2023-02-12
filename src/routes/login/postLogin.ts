@@ -16,7 +16,7 @@ export function postLogin(app: Application) {
         httpOnly: true,
         sameSite: true
       })
-      res.redirect('/chat')
+      res.redirect('/')
     } catch (e) {
       console.error(e)
       res.status(500).send('Internal Server Error')

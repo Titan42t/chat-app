@@ -11,6 +11,6 @@ export function getChat(app: Application) {
       return
     }
 
-    res.sendFile(path.join(__dirname, '../../../pages/chat.html'))    
+    res.render(path.join(__dirname, '../../../pages/chat.ejs'))    
   })
 }

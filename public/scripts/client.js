@@ -1,7 +1,7 @@
 const messageList = document.getElementById('message-list')
 const chatStatus = document.getElementById('chat-status')
 
-function addMessage(name, message) {z
+function addMessage(name, message) {
   const messageElement = document.createElement('div')
   const nameElement = document.createElement('b')
   nameElement.innerText = name + ' : '

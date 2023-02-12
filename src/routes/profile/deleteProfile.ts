@@ -9,6 +9,7 @@ export function deleteProfile(app: Application) {
         }
         try {
             const deletedUser = await deleteUser(req.signedCookies.ssid)
+            console.log(deletedUser)
             res.clearCookie('ssid')
             res.redirect('/login')
         } catch (e) {

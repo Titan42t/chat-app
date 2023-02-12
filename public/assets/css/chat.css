@@ -7,7 +7,7 @@ h1 {
 }
 
 .page {
-    padding: 20px;
+    padding-left: 20px;
 }
 
 .title {
@@ -41,10 +41,10 @@ h1 {
 }
 
 .messager .sendBtn {
-    background: rgb(0, 131, 219);
+    background: #1da1f3;
     color: white;
     padding: 10px 15px;
-    border: solid 2px rgb(0, 131, 219);
+    border: solid 2px #1da1f3;
     border-radius: 5px;
     transition: all .2s ease-in-out;
     cursor: pointer;
@@ -52,5 +52,5 @@ h1 {
 
 .messager .sendBtn:hover {
     background: white;
-    color: rgb(0, 131, 219);
+    color: #1da1f3;
 }

@@ -19,14 +19,15 @@
 #posts .post {
     width: fit-content;
     padding: 10px;
-    background-color: aquamarine;
+    background-color: #1da1f3;
     border-radius: 20px;
     margin-bottom: 30px;
 }
 
 #posts .post p {
-    width: fit-content;
     margin: 0;
-    margin-bottom: 5px;
 }
-/* Merci à Géraud de m'avoir soutenu moralement pendant ce projet */
+
+#posts .post p:first-child {
+    margin-bottom: 10px;
+}
