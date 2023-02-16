@@ -1,5 +1,5 @@
 import expressWs, {Application} from "express-ws"
-import express, {Request, Response} from "express"
+import express, {NextFunction, Request, Response} from "express"
 import cookieParser from 'cookie-parser'
 import path from 'path'
 import {authenticationMiddleware} from "./middlewares/authenticationMiddleware"
@@ -46,9 +46,10 @@ function main() {
   getWs(app, sockets)
   getWsChat(app, sockets)
 
-  app.use((error: Error, req: Request, res: Response) => {
+  app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
     console.error(error)
     res.status(500).send('Internal Server Error')
+    next()
   })
 
   app.listen(3000, () => {
